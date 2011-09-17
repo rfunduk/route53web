@@ -1,0 +1,16 @@
+%table.records
+  %thead
+    %tr
+      %th Name
+      %th Value
+      %th TTL
+      %th &nbsp;
+  %tbody
+    - records.each do |record|
+      - value = record.values.first
+      %tr
+        %td= record.name
+        %td{ :title => value }
+          = value.length > 30 ? value.slice(0,30) + '...' : value
+        %td= record.ttl
+        %td del

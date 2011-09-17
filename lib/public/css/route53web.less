@@ -1,0 +1,81 @@
+@import "lib/bootstrap.less";
+
+body {
+  padding-top: 50px;
+}
+
+#nav {
+  z-index: 5;
+  margin: 0px 30px;
+
+  .container {
+    background: #EEE;
+
+    h3 {
+      float: left;
+      position: relative;
+    }
+    .zone_select {
+      line-height: 36px;
+      float: right;
+      margin-right: 6px;
+      position: relative;
+    }
+  }
+  .topbar {
+    z-index: 8;
+
+    .fill {
+      width: 940px;
+      margin: 0 auto;
+      .border-radius( 0 0 3px 3px );
+
+      h3 {
+        padding-left: 12px;
+      }
+    }
+  }
+}
+
+#zone {
+  width: 900px;
+
+  ul.pills {
+    a {
+      cursor: pointer;
+    }
+  }
+
+  ul.tabs {
+    a {
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+
+  table.records {
+    width: 850px;
+    margin: 0 auto;
+  }
+}
+
+#overlay {
+  display: none;
+  background-color: rgba( .8, .8, .8, 0.25 );
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+
+  #new_zone_modal {
+    width: 400px;
+    display: none;
+    position: relative;
+    top: 25%;
+    left: auto;
+    margin: 0 auto;
+    z-index: 11;
+  }
+}

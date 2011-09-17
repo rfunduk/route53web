@@ -1,0 +1,13 @@
+%table.records
+  %thead
+    %tr
+      %th Nameserver
+      %th Subdomain
+      %th TTL
+  %tbody
+    - record = records.first
+    - record.values.each do |ns|
+      %tr
+        %td= ns
+        %td= record.name
+        %td= record.ttl

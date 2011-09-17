@@ -1,0 +1,18 @@
+%table.records
+  %thead
+    %tr
+      %th Mailserver
+      %th Preference
+      %th Subdomain
+      %th TTL
+      %th &nbsp;
+  %tbody
+    - record = records.first
+    - record.values.each do |mx|
+      - pref, server = mx.split(' ')
+      %tr
+        %td= server
+        %td= pref
+        %td= record.name
+        %td= record.ttl
+        %td del

@@ -1,0 +1,5 @@
+.zone
+  %h4= zone.name
+  = haml :_tabs
+  #records
+    = haml( :"records/_a", :locals => { :records => r( zone, RECORD_TYPES.first ) } )

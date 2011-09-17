@@ -1,0 +1,42 @@
+!!! 5
+%html
+  %head
+    %title Route53Web
+    %link{ :rel => 'stylesheet/less', :href => url_path('css/route53web.less') }
+    %script{ :type => 'text/javascript', :src => url_path('js/less.js') }
+    %meta{ :name => 'path_prefix', :content => path_prefix }
+  %body
+    #nav.topbar-wrapper
+      .topbar
+        .fill
+          .container
+            %h3 Route53Web
+            = haml :_zone_select
+
+    .container#zone
+      - if session.has_key?( :zone )
+        = haml :_zone, :locals => { :zone => z( session[:zone] ) }
+      - else
+        select a zone!
+
+    #overlay
+      #new_zone_modal.modal
+        .modal-header
+          %h3 New Zone...
+          %a.close{ :href => 'javascript:void(0);' } &times;
+        .modal-body
+          %form.form-stacked{ :action => '/zone/new' }
+            %fieldset
+              .clearfix
+                %label{ :for => 'name' } Name
+                .input
+                  %input.xlarge{ :name => 'name', :size => 30, :type => 'text' }
+        .modal-footer
+          %a.btn.primary{ :href => 'javascript:void(0);' } Create
+          %a.btn.secondary{ :href => 'javascript:void(0);' } Cancel
+
+    %script{ :type => 'text/javascript', :src => url_path('js/jquery.js') }
+    %script{ :type => 'text/javascript', :src => url_path('js/route53web.js') }
+    - if session.has_key?( :zone )
+      :javascript
+        zone = #{session[:zone].to_json};

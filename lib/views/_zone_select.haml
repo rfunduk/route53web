@@ -1,0 +1,9 @@
+.zone_select
+  %strong Zone:
+  %select#zone_select
+    - default = session[:zone]
+    %option{ :value => 'none', :selected => default.nil? } -- select --
+    - @zones.each_with_index do |zone|
+      %option{ :value => zone.name, :selected => zone.name == default }
+        = zone.name
+    %option{ :value => 'new' } -- new zone --

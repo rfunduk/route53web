@@ -1,0 +1,14 @@
+%table.records
+  %thead
+    %tr
+      %th Host
+      %th Alias
+      %th TTL
+      %th &nbsp;
+  %tbody
+    - records.each do |record|
+      %tr
+        %td= record.name
+        %td= record.values.first
+        %td= record.ttl
+        %td del

@@ -1,0 +1,4 @@
+%ul.tabs#record_type_select
+  - RECORD_TYPES.each_with_index do |t, i|
+    %li{ :class => i == 0 ? 'active' : '', :rel => t }
+      %a= t
