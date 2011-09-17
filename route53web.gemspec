@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{route53web}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{Ryan Funduk}]
-  s.date = %q{2011-09-12}
+  s.date = %q{2011-09-17}
   s.description = %q{A rack mountable web interface for viewing Amazon Route53 DNS records.}
   s.email = %q{ryan.funduk@gmail.com}
   s.extra_rdoc_files = [
@@ -27,9 +27,6 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
-    "lib/config/aws.yml",
-    "lib/config/aws.yml.sample",
-    "lib/public/.DS_Store",
     "lib/public/css/lib/bootstrap.less",
     "lib/public/css/lib/forms.less",
     "lib/public/css/lib/patterns.less",
@@ -54,6 +51,7 @@ Gem::Specification.new do |s|
     "lib/views/records/_ns.haml",
     "lib/views/records/_soa.haml",
     "lib/views/records/_txt.haml",
+    "route53web.gemspec",
     "spec/config_spec.rb",
     "spec/spec_helper.rb"
   ]
