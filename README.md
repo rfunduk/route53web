@@ -1,5 +1,8 @@
 # Route53::Web
 
+> **Note**: _Be careful using this just now, it requires `sinatra/reloader` which will
+> **significantly** slow down a rails app which this is mounted in!_
+
 `Route53::Web` is a (`Resque::Server`-inspired) micro-app wrapping
 [ruby_route_53](https://github.com/pcorliss/ruby_route_53)
 provides a UI for viewing how your Route53 is configured (later,
